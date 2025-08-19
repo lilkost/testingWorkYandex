@@ -1,0 +1,10 @@
+.header {
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding-top: 26px;
+}

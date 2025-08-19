@@ -1,0 +1,135 @@
+:root {
+    --color-dark: #1F1F1F;
+    --color-light: #FBCE51;
+    --color-accent: #3057A2;
+
+    --color-text-button: #ffffff;
+    --color-text-accent: #F54932;
+    --color-text: #313131;
+
+    --ff-title: 'Merriweather';
+    --ff-text: 'Golos Text';
+    
+    --padding-inline: 20px;
+
+    --transition-default-time-and-function: 300ms linear;
+    --transition-smoothly-time-and-function: 600ms linear;
+
+    --border-table: #D0D0D0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+.container {
+    max-width: calc(calc(var(--padding-inline) * 2) + 1222px);
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: var(--padding-inline);
+}
+
+.title-page {
+    font-family: var(--ff-title);
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.title{
+    font-family: var(--ff-title);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 135%;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.title-block{
+    font-family: var(--ff-title);
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.title mark{
+    background: none;
+    color: var(--color-text-accent);
+    font-weight: 700;
+}
+
+.title-block__description{
+    font-family: var(--ff-text);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--color-accent);
+    text-transform: capitalize;
+    letter-spacing: -0.02em;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-text);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+
+    border-radius: 66px;
+    padding: 20px;
+
+    transition: 
+        color var(--transition-default-time-and-function),
+        background var(--transition-default-time-and-function)
+    ;
+
+    max-height: 72px;
+}
+
+.button_dark {
+    background: var(--color-dark);
+    color: var(--color-text-button);
+}
+
+.button_border {
+    background: transparent;
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+}
+
+.slider-button{
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background: var(--color-dark);
+
+    border-radius: 50px;
+
+    transition: 
+        background var(--transition-default-time-and-function)
+    ;
+}
+.slider-button:disabled{
+    background: #D6D6D6;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.br-mob{
+    display: none;
+}
