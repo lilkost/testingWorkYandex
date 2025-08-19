@@ -374,7 +374,7 @@
         flex-direction: column;
         gap: 28px;
 
-        background-image: url(../../image/item-decor-bg.png);
+        background-image: url(../image/item-decor-bg.png);
         background-position: top left;
         background-size: cover;
 
