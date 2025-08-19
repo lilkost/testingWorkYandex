@@ -131,7 +131,7 @@
 
 @media (max-width: 768px) {
     .top {
-        background-image: var(--url-middle);
+        background-image: url(../image/top-bg-768.png);
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;
@@ -176,7 +176,7 @@
 
 @media (max-width: 480px) {
     .top {
-        background-image: var(--url-mobile);
+        background-image: url(../image/top-bg-mobile.png);
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;

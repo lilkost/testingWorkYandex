@@ -1,5 +1,5 @@
 .top{
-    background-image: var(--url-desktop);
+    background-image: url(../../image/top-bg.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
