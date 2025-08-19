@@ -19,7 +19,7 @@ export const sliderPartyCreate = () => {
     function updateSlider() {
         const slideWidth = slides[0].offsetWidth + 20;
         track.style.transform = `translateX(-${index * slideWidth}px)`;
-        pagination.textContent = `${Math.floor(index / slidesToShow) + 1} / ${Math.ceil(totalSlides / slidesToShow)}`;
+        pagination.innerHTML = `<span>${Math.floor(index / slidesToShow) + 1}</span>  <span class="party__counts-all">/ ${Math.ceil(totalSlides / slidesToShow)}</span>`;
     }
 
     function nextSlide() {
