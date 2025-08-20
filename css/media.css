@@ -38,6 +38,13 @@
     .stage__slide {
         padding-right: 20px;
     }
+
+    .stage__slide-text:has(.br-mob) br{
+        display: none;
+    }
+    .stage__slide-text:has(.br-mob) br.br-mob{
+        display: block;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -509,6 +516,9 @@
 
     .footer {
         padding: 40px 0px 60px 0px;
+    }
+    .footer__text br.br-mob{
+        display: block;
     }
 }
 

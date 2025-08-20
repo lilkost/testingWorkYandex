@@ -19,12 +19,12 @@ export const sliderPartyCreate = () => {
     function updateSlider() {
         const slideWidth = slides[0].offsetWidth + 20;
         track.style.transform = `translateX(-${index * slideWidth}px)`;
-        pagination.innerHTML = `<span>${Math.floor(index / slidesToShow) + 1}</span>  <span class="party__counts-all">/ ${Math.ceil(totalSlides / slidesToShow)}</span>`;
+        pagination.innerHTML = `<span class="party__counts-current">${Math.floor(index / slidesToShow) + 1}</span>  <span class="party__counts-all">/ ${Math.ceil(totalSlides / slidesToShow)}</span>`;
     }
 
     function nextSlide() {
         index += slidesToShow;
-        if (index >= totalSlides) index = 0; 
+        if (index >= totalSlides) index = 0;
         updateSlider();
     }
 
@@ -59,11 +59,36 @@ export const sliderPartyCreate = () => {
 
     window.addEventListener('resize', () => {
         slidesToShow = getSlidesToShow();
-        index = 0; 
+        index = 0;
         updateSlider();
     });
 
 
     updateSlider();
     startAutoplay();
+
+    // ========== свайпы ==========
+    function enableSwipe() {
+        let startX = 0;
+        let endX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+
+            if (Math.abs(deltaX) > 50) { 
+                if (deltaX < 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+    }
+
+    enableSwipe();
 }

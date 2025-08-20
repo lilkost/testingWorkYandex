@@ -36,7 +36,9 @@
 
     color: var(--color-text);
 }
-
+.party__counts-current{
+    min-width: 10px;
+}
 .party__counts-all {
     opacity: 0.6;
 }

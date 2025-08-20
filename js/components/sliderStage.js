@@ -21,7 +21,7 @@ export const sliderStageCreate = () => {
             }
             bullets = document.querySelectorAll('.bullet');
 
-
+            enableSwipe();
             updateSlider();
         } else {
             track.style.transform = "none";
@@ -69,4 +69,28 @@ export const sliderStageCreate = () => {
     });
 
     initSlider();
+
+
+        // ========== свайпы ==========
+    function enableSwipe() {
+        let startX = 0;
+        let endX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+
+            if (Math.abs(deltaX) > 50) { 
+                if (deltaX < 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+    }
 }
